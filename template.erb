@@ -1,0 +1,25 @@
+require "./lib/parser.rb"
+require "./lib/base.rb"
+require "./lib/grid/matrix.rb"
+
+class Day<%= day %> < Base
+  DAY = <%= day %>
+
+
+  def initialize(type = "example")
+    lines = Parser.lines(DAY, type)
+    lines.each do |line|
+      # a,b,c = line.scan(/[a-zA-Z]+|\d+/)
+      # ns = line.scan(/\d+/).map(&:to_i)
+      # ns = line.split(" ")
+    end
+  end
+
+  def one
+    1
+  end
+
+  def two
+    2
+  end
+end
