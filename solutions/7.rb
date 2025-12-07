@@ -10,13 +10,13 @@ class Day7 < Base
     @beams = { lines[0].find_index("S") => 1 }
     @splits = 0
     lines[1..].each do |line|
-      new_beams = {}
+      new_beams = Hash.new(0)
       @beams.each do |idx, count|
         if line[idx] == "."
-          new_beams[idx] = (new_beams[idx] || 0) + count
+          new_beams[idx] += count
         else
-          new_beams[idx-1] = (new_beams[idx-1] || 0) + count
-          new_beams[idx+1] = (new_beams[idx+1] || 0) + count
+          new_beams[idx-1] += count
+          new_beams[idx+1] += count
           @splits += 1
         end
       end
@@ -30,18 +30,5 @@ class Day7 < Base
 
   def two
     @beams.values.sum
-    #timelines(0, @start, {})
-  end
-
-  def timelines(x, y, memo)
-    memo[[x, y]] ||= begin
-      if x == (@lines.length - 1)
-        1
-      elsif @lines[x][y] == "."
-        timelines(x+1, y, memo)
-      else
-        timelines(x+1, y-1, memo) + timelines(x+1, y+1, memo)
-      end
-    end
   end
 end
