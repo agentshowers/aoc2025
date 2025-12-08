@@ -25,7 +25,7 @@ File.write("solutions/#{day}.rb", render.result)
 # Open page
 
 %x{ touch example/#{day}.txt }
-%x{ code solutions/#{day}.rb }
-%x{ code example/#{day}.txt }
+%x{ cursor solutions/#{day}.rb }
+%x{ cursor example/#{day}.txt }
 
 %x{ open -a Firefox 'https://adventofcode.com/#{year}/day/#{day}' }
