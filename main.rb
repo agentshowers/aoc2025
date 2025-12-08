@@ -62,7 +62,7 @@ def pretty_print(solutions)
   end
 
   puts "-------------------------------------------------------------------------------------\n"
-  puts " "*42 + "Total time: #{total_time.round(2)} ms"
+  puts " "*62 + "Total time: #{total_time.round(2)} ms"
 end
 
 

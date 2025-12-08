@@ -63,7 +63,6 @@ class Day8 < Base
       end
       return a[0] * b[0] if boxes == 1 && added == @points.length
     end
-    -1
   end
 
   def distance(x1, y1, z1, x2, y2, z2)
