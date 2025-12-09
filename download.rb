@@ -12,7 +12,7 @@ def download(day)
   uri = URI("https://adventofcode.com/#{ENV['YEAR']}/day/#{day}/input")
   req = Net::HTTP::Get.new(uri)
   req['Cookie'] = "session=#{ENV['COOKIE']}"
-  res = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => true) { |http| http.request(req) }
+  res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true, verify_mode: OpenSSL::SSL::VERIFY_NONE) { |http| http.request(req) }
   File.open("input/#{day}.txt", 'w') do |file|
     file.write(res.body)
   end
