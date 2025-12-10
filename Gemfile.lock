@@ -3,6 +3,10 @@ GEM
   specs:
     algorithms (1.0.1)
     dotenv (3.1.4)
+    ffi (1.17.2)
+    ffi (1.17.2-arm64-darwin)
+    z3 (0.0.20251017)
+      ffi (~> 1.17)
 
 PLATFORMS
   arm64-darwin-24
@@ -11,6 +15,7 @@ PLATFORMS
 DEPENDENCIES
   algorithms
   dotenv
+  z3
 
 RUBY VERSION
    ruby 3.4.1p0
